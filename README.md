@@ -111,7 +111,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 * MCU port pins used in the application are discribed in the below table.
 
 <p align="center">
-  <img width=auto height=auto src="images/blockdiagram.png">
+  <img width=auto height=auto src="images/.png">
   <br>Table 1: MCU port pin mapping <br>
 </p> 
 
@@ -121,7 +121,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
 
 <p align="center">
-  <img width=auto height=auto src="images/blockdiagram.png">
+  <img width=auto height=auto src="images/.png">
   <br>Figure 9: Demo setup IR Receiver <br>
 </p> 
 

@@ -3,28 +3,28 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.",
-        "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "name": "com.microchip.mcu8.mplabx.project.pic18f47q10-clc-ir-commuication-receiver-mplab",
+        "version": "1.0.0",
+        "displayName": "CLC IR communication Receiver",
+        "projectName": "pic18f47q10-clc-ir-commuication-receiver-mplab",
+        "shortDescription": "This demo is realized using PIC18 Q10 family MCU and Curiosity Nano development board. The demo highlights the usage of CIPs for IR communication implementation in real time control applications. This code example contains IR receiver implementation details.",
         "ide": {
-            "name": "",
-            "semverRange": ""
+            "name": "MPLAB X IDE",
+            "semverRange": ">=5.40.0"
         },
         "compiler": [
 			{
-				"name": "",
-				"semverRange": ""
+				"name": "XC8",
+				"semverRange": "^2.30.0"
 			}
 		],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.8.154"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=3.95.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -32,26 +32,42 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "PIC18F47Q10",
                 "versionRange": "*"
             }
         },
-        "author": "",
+        "author": "Microchip",
         "subcategories": [
             "",
             [
-               "Peripherals", ""
+               "Peripherals", "CLC"
             ],
             [
-               "Peripherals", ""
-            ]            			
+               "Peripherals", "PWM"
+            ]
+		    [
+               "Peripherals", "CCP"
+            ],
+            [
+               "Peripherals", "TMR1"
+            ]
+		    [
+               "Peripherals", "TMR2"
+            ]
+           
         ],
         "peripherals": [
-            "",""
+            "CLC","PWM","CCP","TMR1","TMR2"
         ],
         "keywords": [
-            "",
-            ""			
+            "IR Communication",
+            "IR Click",
+			"Modulation",
+			"Carrier signal",
+			"Wireless techonology",
+			"PIC18F47Q10 Curiosity Nano",
+			"Curiosity Nano Base click board",
+			"LCD mini click"
         ],
 		"additionalData": {
 			"longDescription": {
