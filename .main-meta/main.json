@@ -38,19 +38,19 @@
         },
         "author": "Microchip",
         "subcategories": [
-            "",
+            "MCC",
             [
                "Peripherals", "CLC"
             ],
             [
                "Peripherals", "PWM"
-            ]
+            ],
 		    [
                "Peripherals", "CCP"
             ],
             [
                "Peripherals", "TMR1"
-            ]
+            ],
 		    [
                "Peripherals", "TMR2"
             ]

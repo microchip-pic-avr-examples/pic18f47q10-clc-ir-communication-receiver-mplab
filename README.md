@@ -18,7 +18,7 @@ Many real time control applications use infrared (commonly referred to as IR) wi
 
 - [PIC18F47Q10 Product Page](https://www.microchip.com/wwwproducts/en/PIC18F47Q10 "PIC18F47Q10 Product Page")
 - [PIC18F47Q10 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=PIC18F47Q10&type=&language= "PIC18F47Q10 Code Examples on GitHub")
-- [IR Communication using Core Independent peripherals:IR Receiver-GitHub link](https://github.com/microchip-pic-avr-examples/pic18f47q10-clc-ir-communication-receiver-mplab.git "IR Communication using Core Independent peripherals:IR Receiver-GitHub link")
+- [IR Communication using Core Independent peripherals:IR Transmitter-GitHub link](https://github.com/microchip-pic-avr-examples/pic18f47q10-clc-ir-communication-transmitter-mplab.git "IR Communication using Core Independent peripherals:IR Transmitter-GitHub link")
 - [DC Motor control with Touch Interface and IR communication-Application note](http://ww1.microchip.com/downloads/en/AppNotes/AN2933-DC-Motor-Control-with-Touch-Interface-and-IR00002933A.pdf "DC Motor control with Touch Interface and IR communication-Application note")
 
 
