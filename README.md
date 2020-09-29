@@ -24,7 +24,7 @@ Many real time control applications use infrared (commonly referred to as IR) wi
 
 ## IR Receiver
 
-The IR receiver unit is realized using the existing evaluation boards; Curiosity HPC development board and IR Click board. TSOP38338 IR receiver module on IR click board is used for detecting received IR commands. IR receiver is implemented as shown in the figure 1.
+The IR receiver unit is realized using the existing evaluation boards; Curiosity Nano Base for click boards and IR Click board. TSOP38338 IR receiver module on IR click board is used for detecting received IR commands. IR receiver is implemented as shown in the figure 1.
 
 <p align="center">
   <img width=auto height=auto src="images/blockdiagram.png">
@@ -106,8 +106,8 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 
 ##  IR Receiver
 
-* Connect IR Click board in mikroBUS™ slot 1 of the Curiosity HPC board.
-* Connect LCD mini Click board in mikroBUS™ slot 2 of the Curiosity HPC board.
+* Connect IR Click board in mikroBUS™ slot 1 of the Curiosity Nano Base for click boards.
+* Connect LCD mini Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
 * MCU port pins used in the application are discribed in the below table.
 
 <p align="center">
