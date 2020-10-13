@@ -37,7 +37,7 @@ Output of the IR click, the demodulated data is connected to the microcontroller
 
 - [MPLAB X IDE v5.40](https://www.microchip.com/mplab/mplab-x-ide "MPLAB X IDE v5.40")
 - [XC8 Compiler v2.30](https://www.microchip.com/mplab/compilers "XC8 Compiler v2.20")
-- [MPLAB Code Configurator Core version 4.85](https://www.microchip.com/mplab/mplab-code-configurator "MPLAB Code Configurator Core version 4.85")
+- [MPLAB Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator "MPLAB Code Configurator v4.0.2")
 - [PIC18F-Q_DFP v1.8.154](https://packs.download.microchip.com/ "PIC18F-Q_DFP v1.8.154")
 
 ***Note: For running the demo, the installed tool versions should be the same or later. This example is not tested with the previous versions.***
@@ -106,14 +106,23 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 
 ##  IR Receiver
 
-* Connect IR Click board in mikroBUS™ slot 1 of the Curiosity Nano Base for click boards.
-* Connect LCD mini Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
+* Connect IR Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
+* Connect LCD mini Click board in mikroBUS™ slot 3 of the Curiosity Nano Base for click boards.
 * MCU port pins used in the application are discribed in the below table.
 
-<p align="center">
-  <img width=auto height=auto src="images/.png">
-  <br>Table 1: MCU port pin mapping <br>
-</p> 
+|Sr.No| MCU Port pin #|Signal Name|Signal Description|IN/OUT|  
+|:---------:|:----------:|:----------:|:----------:|:----------:|
+| 1 | RA1 | IR_RX | IR received signal | IN |
+| 2 | RC0 | CCP1  | Capture input      | IN |
+| 3 | RA2 | LCD_CS2 | LCD mini chip select 2 | OUT |
+| 4 | RD7 | LCD_CS | LCD mini chip select | OUT |
+| 5 | RD5 | LCD_Reset | LCD mini reset | OUT |
+| 6 |     | LCD_PWM | LCD mini PWM | OUT |
+| 7 | RC2 | PWM | CCP2 PWM | OUT |
+| 8 | RC6 | SCK | SPI SCK for LCD | OUT |
+| 9 | RC5 | SDI | SPI SDI for LCD | IN  |
+| 10 | RC4 | SDO | SPI SDO for LCD | OUT |
+ 
 
 **Note:**
 
@@ -132,25 +141,24 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 ## IR Transmitter
 
 * Switches S1 is used to send IR commands to the IR receiver.
-* Pressing switch S1 will send the IR command equal to the switch press count from 1 to 8. After 8th count the command count 1 to 8 is repeated. Indication LED D2 will turn on for 200 mS after command is sent .
-
+* Pressing switch S1 will send the IR command equal to the switch press count plus 0x80 i.e. from 0x81 to 0x88. After 8th count the command 0x81 to 0x88 are repeated. 
 
 ## IR Receiver
 
 * After reset the IR receiver will wait for command to be received and "Waiting for CMD" message will be displayed on the LCD.
 
-* If any command is received from the IR Transmitter board then corrosponding control action is taken and the received command along with control action is displyed on the LCD screen.
+* If any command is received from the IR Transmitter board then corresponding control action is taken and the received command along with control action is displyed on the LCD screen.
 
 * If there is any error during reception such as error in start of the frame, error in data bit length, receiver address mismatch, error in command byte etc. then corrosponding error message will be displayed on the LCD and the receiver will get ready for next IR frame reception.
 
-* Press switch S1 to send command #1 to the receiver as shown in figure 10.
+* Press switch S1 to send command #81 to the receiver as shown in figure 10.
 
 <p align="center">
   <img width=auto height=auto src="images/.png">
   <br>Figure 10: Press switch S1 to send command #1 <br>
 </p> 
 
-* Receiver after receiving command #1:
+* Receiver after receiving command #81:
 
 <p align="center">
   <img width=auto height=auto src="images/.png">
@@ -160,14 +168,14 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 
 * Below is the list of all commands and control actions.
 
-1. Command #1: make brightness of LED D5 25%.
-2. Command #2: make brightness of LED D5 50%
-3. Command #3: make brightness of LED D5 75%.
-4. Command #4: make brightness of LED D5 100%
-5. Command #5: make brightness of LED D5 75%.
-6. Command #6: make brightness of LED D5 50%
-7. Command #7: make brightness of LED D5 25%.
-8. Command #8: make brightness of LED D5 0%
+1. Command #81: make brightness of LED D5 25%.
+2. Command #82: make brightness of LED D5 50%
+3. Command #83: make brightness of LED D5 75%.
+4. Command #84: make brightness of LED D5 100%
+5. Command #85: make brightness of LED D5 75%.
+6. Command #86: make brightness of LED D5 50%
+7. Command #87: make brightness of LED D5 25%.
+8. Command #88: make brightness of LED D5 0%
 
 
 ## Conclusion
