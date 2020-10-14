@@ -130,7 +130,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
 
 <p align="center">
-  <img width=auto height=auto src="images/image1.png">
+  <img width=auto height=auto src="images/image3.png">
   <br>Figure 9: Demo setup IR Receiver <br>
 </p> 
 
@@ -154,7 +154,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 * Press switch S1 to send command #81 to the receiver as shown in figure 10.
 
 <p align="center">
-  <img width=auto height=auto src="images/hardwaresetup.png">
+  <img width=auto height=auto src="images/image2.png">
   <br>Figure 10: Press switch S1 to send command #81 <br>
 </p> 
 
