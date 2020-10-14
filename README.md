@@ -117,7 +117,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 | 3 | RA2 | LCD_CS2 | LCD mini chip select 2 | OUT |
 | 4 | RD7 | LCD_CS | LCD mini chip select | OUT |
 | 5 | RD5 | LCD_Reset | LCD mini reset | OUT |
-| 6 |     | LCD_PWM | LCD mini PWM | OUT |
+| 6 | RD1 | LCD_PWM | LCD mini PWM | OUT |
 | 7 | RC2 | PWM | CCP2 PWM | OUT |
 | 8 | RC6 | SCK | SPI SCK for LCD | OUT |
 | 9 | RC5 | SDI | SPI SDI for LCD | IN  |
@@ -130,7 +130,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
 
 <p align="center">
-  <img width=auto height=auto src="images/.png">
+  <img width=auto height=auto src="images/image1.png">
   <br>Figure 9: Demo setup IR Receiver <br>
 </p> 
 
@@ -154,28 +154,28 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 * Press switch S1 to send command #81 to the receiver as shown in figure 10.
 
 <p align="center">
-  <img width=auto height=auto src="images/.png">
-  <br>Figure 10: Press switch S1 to send command #1 <br>
+  <img width=auto height=auto src="images/hardwaresetup.png">
+  <br>Figure 10: Press switch S1 to send command #81 <br>
 </p> 
 
 * Receiver after receiving command #81:
 
 <p align="center">
-  <img width=auto height=auto src="images/.png">
-  <br>Figure 11: Receiver after receiving command #1 <br>
+  <img width=auto height=auto src="images/image1.png">
+  <br>Figure 11: Receiver after receiving command #81 <br>
 </p> 
 
 
 * Below is the list of all commands and control actions.
 
-1. Command #81: make brightness of LED D5 25%.
-2. Command #82: make brightness of LED D5 50%
-3. Command #83: make brightness of LED D5 75%.
-4. Command #84: make brightness of LED D5 100%
-5. Command #85: make brightness of LED D5 75%.
-6. Command #86: make brightness of LED D5 50%
-7. Command #87: make brightness of LED D5 25%.
-8. Command #88: make brightness of LED D5 0%
+1. Command #81: make brightness of LED 25%.
+2. Command #82: make brightness of LED 50%
+3. Command #83: make brightness of LED 75%.
+4. Command #84: make brightness of LED 100%
+5. Command #85: make brightness of LED 75%.
+6. Command #86: make brightness of LED 50%
+7. Command #87: make brightness of LED 25%.
+8. Command #88: make brightness of LED 0%
 
 
 ## Conclusion
