@@ -140,7 +140,7 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 
 ## IR Transmitter
 
-* Switches S1 is used to send IR commands to the IR receiver.
+* Switch S1 is used to send IR commands to the IR receiver.
 * Pressing switch S1 will send the IR command equal to the switch press count plus 0x80 i.e. from 0x81 to 0x88. After 8th count the command 0x81 to 0x88 are repeated. 
 
 ## IR Receiver
