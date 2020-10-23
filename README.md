@@ -129,7 +129,7 @@ Set the SPI speed under MSSP foundation service library configurations section. 
 
 1. RC0 is configured as CCP capture input pin. This is due to the reason that PORT B or PORT C can only be used as CCP input. IR click board can feed received data only to pin RA1. So connected RC0 to RA1 internally using CLC as interconnecting element
 2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
-3. Output of PWM3 peripheral is avaiable on RA3 pin, to control RE0 LED brightness, short RA3 Pin to RE0.
+3. Output of PWM3 peripheral is avaiable on RA3 pin. To control RE0 LED brightness using PWM3, short RA3 pin to RE0. 
 
 <p align="center">
   <img width=700 height=auto src="images/image3.png">
