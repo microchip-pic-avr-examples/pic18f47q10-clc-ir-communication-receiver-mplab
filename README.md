@@ -55,7 +55,7 @@ This section shows the settings used for the system clock and the peripheral con
 
 ## MCC settings for IR  Receiver:
 
-In the IR receiver demo firmware the High-Frequency Internal Oscillator (HFINTOSC) is configured to generate 32MHz clock and is used as a system clock.Refer figure 2.
+In the IR receiver demo firmware the High-Frequency Internal Oscillator (HFINTOSC) is configured to generate 32MHz clock and is used as a system clock. Refer figure 2.
 
 <p align="center">
   <img width=auto height=auto src="images/clock.png">
@@ -95,7 +95,7 @@ For using LCD mini click MCC provides library with pre-configured SPI module alo
   <br>Figure 7: MCC Micro-E Click Library for LCD mini click <br>
 </p> 
 
-Set the SPI speed under MSSP foundation service library configurations section.Refer figure 8.
+Set the SPI speed under MSSP foundation service library configurations section. Refer figure 8.
 
 <p align="center">
   <img width=auto height=auto src="images/spi.png">
@@ -122,12 +122,14 @@ Set the SPI speed under MSSP foundation service library configurations section.R
 | 8 | RC6 | SCK | SPI SCK for LCD | OUT |
 | 9 | RC5 | SDI | SPI SDI for LCD | IN  |
 | 10 | RC4 | SDO | SPI SDO for LCD | OUT |
+| 11 | RE0 | LED | LED on PIC18F47Q10 Curiosity Nano board| OUT |
  
 
 **Note:**
 
-1. RC0 is configured as CCP capture input pin. This is due to the reason that PORT B or PORT C can only be used as CCP input. IR click board can feed received data only to pin RA1.So connected RC0 to RA1 internally using CLC as interconnecting element
+1. RC0 is configured as CCP capture input pin. This is due to the reason that PORT B or PORT C can only be used as CCP input. IR click board can feed received data only to pin RA1. So connected RC0 to RA1 internally using CLC as interconnecting element
 2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
+3. Output of PWM3 peripheral is avaiable on RA3 pin, to control RE0 LED brightness, short RA3 Pin to RE0.
 
 <p align="center">
   <img width=700 height=auto src="images/image3.png">
