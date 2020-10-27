@@ -106,8 +106,8 @@ Set the SPI speed under MSSP foundation service library configurations section. 
 
 ##  IR Receiver
 
-* Connect IR Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
-* Connect LCD mini Click board in mikroBUS™ slot 3 of the Curiosity Nano Base for click boards.
+* Insert IR Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
+* Insert LCD mini Click board in mikroBUS™ slot 3 of the Curiosity Nano Base for click boards.
 * MCU port pins used in the application are discribed in the below table.
 
 |Sr.No| MCU Port pin #|Signal Name|Signal Description|IN/OUT|  
