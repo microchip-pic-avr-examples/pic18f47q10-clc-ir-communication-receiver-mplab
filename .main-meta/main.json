@@ -9,7 +9,7 @@
         "projectName": "pic18f47q10-clc-ir-communication-receiver-mplab",
         "shortDescription": "This demo is realized using PIC18-Q10 family MCU and Curiosity Nano development board. The demo highlights the usage of CIPs for IR communication implementation in real time control applications. This code example contains IR receiver implementation details.",
         "ide": {
-            "name": "MPLAB X IDE",
+            "name": "MPLAB X",
             "semverRange": ">=5.40.0"
         },
         "compiler": [
