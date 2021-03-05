@@ -4,13 +4,13 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47q10-clc-ir-communication-receiver-mplab",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "displayName": "IR Communication using Core Independent Peripherals: IR Receiver",
         "projectName": "pic18f47q10-clc-ir-communication-receiver-mplab",
         "shortDescription": "This demo is realized using PIC18-Q10 family MCU and Curiosity Nano development board. The demo highlights the usage of CIPs for IR communication implementation in real time control applications. This code example contains IR receiver implementation details.",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=5.40.0"
+            "semverRange": ">=5.45.0"
         },
         "compiler": [
 			{
@@ -39,6 +39,8 @@
         "author": "Microchip",
         "subcategories": [
             "MCC",
+			"Home Appliance",
+			"Communications",
             [
                "Peripherals", "CLC"
             ],
@@ -57,13 +59,10 @@
         ],
         "keywords": [
             "IR Communication",
-            "IR Click",
-			"Modulation",
-			"Carrier signal",
-			"Wireless techonology",
-			"PIC18F47Q10 Curiosity Nano",
-			"Curiosity Nano Base click board",
-			"LCD mini click"
+            "Bytton",
+			"Wireless Communication",
+			"Curiosity Nano",
+			"LCD"
         ],
 		"additionalData": {
 			"longDescription": {
