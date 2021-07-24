@@ -39,7 +39,7 @@
         "author": "Microchip",
         "subcategories": [
 			"Home Appliance",
-			"Communications",
+			"Communication",
             [
                "Peripherals", "CLC"
             ],
@@ -58,7 +58,7 @@
         ],
         "keywords": [
             "Button",
-			"Wireless Communication",
+			"Wireless",
 			"Curiosity",
 			"LCD"
         ],
