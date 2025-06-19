@@ -1,15 +1,13 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+/**
+ * SPI Type Definitions Header File
  *
- * @version MAIN Driver Version 1.0.2
+ * @file spi_polling_types.h
  *
- * @version Package Version: 3.1.2
+ * @defgroup spi SPI
+ *
+ * @brief This header file provides type definitions for the SPI module operation in Polling mode.
+ *
+ * @version SPI Driver Version v5.0.0
 */
 
 /*
@@ -32,30 +30,23 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+#ifndef SPI_POLLING_TYPES_H
+#define	SPI_POLLING_TYPES_H
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
 
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+/**
+ * @ingroup spi
+ * @typedef struct spi_configuration_t
+ * @brief Holds register configurations for SPI module.
+ */
+typedef struct {  
+    uint8_t stat;
+    uint8_t con1;
+    uint8_t con3;
+    uint8_t baud;
+    uint8_t clock;
+} spi_configuration_t;
+
+#endif /* SPI_POLLING_TYPES_H */
+

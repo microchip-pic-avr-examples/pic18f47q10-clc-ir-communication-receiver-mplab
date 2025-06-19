@@ -1,15 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * CLOCK Generated Driver Header File 
  * 
- * @file main.c
+ * @file clock.h
  * 
- * @defgroup main MAIN
+ * @defgroup clockdriver Clock Driver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes and other data types for the Clock driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.4
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 4.3.7
+ *
 */
 
 /*
@@ -32,30 +33,29 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
+
+#ifndef CLOCK_H
+#define	CLOCK_H
+
+#ifndef _XTAL_FREQ
+/**
+    @ingroup clock control 
+    @def system frequency
+    @misradeviation{@required, 21.1} Defining the system frequency using the _XTAL_FREQ macro is required by the XC8 compiler for the built-in delay functions.
 */
+/* cppcheck-suppress misra-c2012-21.1 */
+#define _XTAL_FREQ 32000000U
+#endif
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+/**
+ * @ingroup clockdriver
+ * @brief Initializes all the Internal Oscillator sources and the clock switch configurations. 
+ * @param None.
+ * @return None.
+ */
+void CLOCK_Initialize(void);
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+#endif	/* CLOCK_H */
+/**
+ End of File
+*/

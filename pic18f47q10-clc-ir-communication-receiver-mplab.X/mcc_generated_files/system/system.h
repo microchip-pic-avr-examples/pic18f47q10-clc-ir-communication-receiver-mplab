@@ -1,17 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * System Driver Header File
  * 
- * @file main.c
+ * @file system.h
  * 
- * @defgroup main MAIN
+ * @defgroup systemdriver System Driver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototype for the System Driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.3
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 2.1.5
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,30 +31,37 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
+
+#ifndef SYSTEM_H
+#define	SYSTEM_H
+
+#include <xc.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "config_bits.h"
+#include "../system/pins.h"
+#include "../clc/clc1.h"
+#include "../clc/clc3.h"
+#include "../pwm/pwm3.h"
+#include "../spi/mssp1.h"
+#include "../system/interrupt.h"
+#include "../system/clock.h"
+#include "../capture/ccp1.h"
+#include "../pwm/ccp2.h"
+#include "../timer/tmr1.h"
+#include "../timer/tmr2.h"
+#include "../timer/tmr4.h"
+
+/**
+ * @ingroup systemdriver
+ * @brief Initializes the system module.
+ * This routine is called only once during system initialization, before calling other APIs.
+ * @param None.
+ * @return None.
 */
+void SYSTEM_Initialize(void);
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
-
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+#endif	/* SYSTEM_H */
+/**
+ End of File
+*/

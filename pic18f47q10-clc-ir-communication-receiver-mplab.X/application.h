@@ -5,15 +5,19 @@
 extern "C" {
 #endif
 
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/system/system.h"
+#include "macros.h"
+#include "digipot.h"
+#include "expander.h"
+#include "lcd.h"
  
-#define START_TIME      0xD2F0U//timer 1/CCP count for 13.5mS
-#define START_TIME_MIN  0xB000U //timer 1/CCP count for 11.256mS
-#define START_TIME_MAX  0xDF00U//timer 1/CCP count for 14.272mS
-#define BIT_TIME_ERROR  0x0300U//timer 1/CCP count for 192 us
-#define LOGIC_0         0x1194U//timer 1/CCP count for 1.125mS
-#define LOGIC_1         0x2328U//timer 1/CCP count for 2.25mS    
-#define BIT_TIME_MAX    0x2600U//timer 1/CCP count for 4.432mS   
+#define START_TIME      0xD2F0U     // timer 1/CCP count for 13.5mS
+#define START_TIME_MIN  0xB000U     // timer 1/CCP count for 11.256mS
+#define START_TIME_MAX  0xDF00U     // timer 1/CCP count for 14.272mS
+#define BIT_TIME_ERROR  0x0300U     // timer 1/CCP count for 192 us
+#define LOGIC_0         0x1194U     // timer 1/CCP count for 1.125mS
+#define LOGIC_1         0x2328U     // timer 1/CCP count for 2.25mS    
+#define BIT_TIME_MAX    0x2600U     // timer 1/CCP count for 4.432mS   
    
 #define ZERO            (uint8_t)0    
 
@@ -107,7 +111,7 @@ void TMR2_UserInterruptHandler(void);
    @Description
     CCP1 interrupt handler function , 
  */
-void CCP1_UserInterruptHandler(void);
+void CCP1_UserInterruptHandler(uint16_t capturedValue);
 
 #ifdef	__cplusplus
 }

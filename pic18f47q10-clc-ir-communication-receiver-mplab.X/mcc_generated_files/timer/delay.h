@@ -1,17 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * DELAY Generated Driver API Header File
  * 
- * @file main.c
+ * @file delay.h
  * 
- * @defgroup main MAIN
+ * @defgroup delay DELAY BLOCKING DRIVER
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API to generate delays in the range of milliseconds and microseconds.
  *
- * @version MAIN Driver Version 1.0.2
- *
- * @version Package Version: 3.1.2
+ * @version DELAY Driver Version 1.1.0
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,30 +29,26 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
+
+#ifndef _DELAY_H
+#define _DELAY_H
+
+#include <stdint.h>
+
+/**
+*  @ingroup delay
+*  @brief Delays the execution of the program for a certain number of milliseconds
+*  @param[in] milliseconds - Number of milliseconds to delay
+*  @return None.
 */
+void DELAY_milliseconds(uint16_t milliseconds);
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+/**
+*  @ingroup delay
+*  @brief Delays the execution of the program for a certain number of microseconds
+*  @param[in] microseconds - Number of microseconds to delay
+*  @return None.
+*/
+void DELAY_microseconds(uint16_t microseconds);
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+#endif	// _DELAY_H

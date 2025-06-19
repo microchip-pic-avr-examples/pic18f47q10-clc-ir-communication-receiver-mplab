@@ -1,15 +1,13 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+/**
+ * SPI Driver API Interface File
  *
- * @version MAIN Driver Version 1.0.2
+ * @file spi_interface.h
  *
- * @version Package Version: 3.1.2
+ * @defgroup spi SPI
+ *
+ * @brief This header file provides API prototypes for the SPI module in Polling and Interrupt mode.
+ *
+ * @version SPI Interface Version v3.0.0
 */
 
 /*
@@ -32,30 +30,35 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+#ifndef SPI_INTERFACE_H
+#define SPI_INTERFACE_H
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
         
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
+/**
+ * @ingroup spi
+ * @struct SPI_INTERFACE SPI
+ * @brief SPI Driver prototypes struct.
+ */ 
+struct SPI_INTERFACE
+{   
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize); 
+    uint8_t (*ByteExchange)(uint8_t byteData);    
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    bool (*IsRxReady)(void);
+    bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
 
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+#endif /* SPI_INTERFACE_H */

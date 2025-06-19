@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\pic18f47q10-clc-ir-receiver-mplab.X.production.hex">
+  <executable name="dist/default/production\pic18f47q10-clc-ir-communication-receiver-mplab.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>131072</length>
-      <used>8984</used>
-      <free>122088</free>
+      <used>5964</used>
+      <free>125108</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
-      <length>3615</length>
-      <used>308</used>
-      <free>3307</free>
+      <length>3359</length>
+      <used>246</used>
+      <free>3113</free>
     </memory>
   </executable>
 </project>

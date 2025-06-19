@@ -1,18 +1,16 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
- *
- * @version MAIN Driver Version 1.0.2
- *
- * @version Package Version: 3.1.2
+/**
+  * PWM3 Generated Driver File
+  *
+  * @file pwm3.c
+  *
+  * @ingroup pwm3
+  *
+  * @brief This file contains the API implementations for the PWM3 module.
+  *
+  * @version PWM3 Driver Version 2.0.4
 */
 
-/*
+ /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
@@ -32,30 +30,41 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
+ 
+ /**
+  * Section: Included Files
+  */
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+ #include <xc.h>
+ #include "../pwm3.h"
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
+ /**
+  * Section: PWM Module APIs
+  */
 
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+ void PWM3_Initialize(void)
+ {
+    // Set the PWM3 to the options selected in the User Interface
+    
+    // PWMPOL active_lo; PWMEN enabled; 
+    PWM3CON = 0x90;
+    
+    // PWMDCH 0; 
+    PWM3DCH = 0x0;
+
+    // PWMDCL 0; 
+    PWM3DCL = 0x0;
+    
+
+    CCPTMRSbits.P3TSEL = 0x2;
+
+ }
+
+ void PWM3_LoadDutyValue(uint16_t dutyValue)
+ {
+     // Writing to 8 MSBs of PWM duty cycle in PWMDCH register
+     PWM3DCH = (uint8_t) ((dutyValue & 0x03FCu) >> 2);
+     
+     // Writing to 2 LSBs of PWM duty cycle in PWMDCL register
+     PWM3DCL = (uint8_t) ((dutyValue & 0x0003u) << 6);
+ }

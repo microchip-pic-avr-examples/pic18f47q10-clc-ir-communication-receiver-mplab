@@ -1,610 +1,574 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"399 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\bits/alltypes.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\bits/alltypes.h: 399: typedef struct _IO_FILE FILE;
+"409 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/bits/alltypes.h
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/bits/alltypes.h: 409: typedef struct _IO_FILE FILE;
 [s S1 ]
 [n S1 _IO_FILE ]
-"101 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdio.h: 101: int fputs(const char *restrict, FILE *restrict);
+"113 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdio.h
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdio.h: 113: int fputs(const char *restrict, FILE *restrict);
 [v _fputs `(i ~T0 @X0 0 ef2`*Cuc`*S1 ]
-"92
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdio.h: 92: int fputc(int, FILE *);
+"98
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdio.h: 98: int fputc(int, FILE *);
 [v _fputc `(i ~T0 @X0 0 ef2`i`*S1 ]
-"54 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\string.h: 54: size_t strlen (const char *);
-[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"51 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h: 51: int abs (int);
+"78 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdlib.h: 78: int abs (int);
 [v _abs `(i ~T0 @X0 0 ef1`i ]
-"20 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h: 20: int isupper(int);
-[v _isupper `(i ~T0 @X0 0 ef1`i ]
-"11
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h: 11: int isalpha(int);
-[v _isalpha `(i ~T0 @X0 0 ef1`i ]
-"23
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h: 23: int toupper(int);
-[v _toupper `(i ~T0 @X0 0 ef1`i ]
-"14 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdarg.h
+[v F1169 `*v ~T0 @X0 -> -> 1 `i `ux t ]
+"14 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdarg.h
 [v ___va_arg `(*v ~T0 @X0 0 ev`*v ]
 [p i ___va_arg ]
-"23 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h: 23: int atoi (const char *);
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"14 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\ctype.h: 14: int isdigit(int);
-[v _isdigit `(i ~T0 @X0 0 ef1`i ]
-"55 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 55: static int flags, prec, width;
-[v _flags `i ~T0 @X0 1 s ]
+"1182 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1182:  union {
+[u S36 `i 1 `ui 1 `d 1 ]
+[n S36 . sint uint f ]
+"153 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 153: static int prec, width;
 [v _prec `i ~T0 @X0 1 s ]
 [v _width `i ~T0 @X0 1 s ]
-"66
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 66: static char dbuf[32];
+"154
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 154: static char flags;
+[v _flags `uc ~T0 @X0 1 s ]
+"185
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 185: static char dbuf[32];
 [v _dbuf `uc ~T0 @X0 -> 32 `i s ]
-"69
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 69: static int nout;
-[v _nout `i ~T0 @X0 1 s ]
-"72
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 72: static int pad(FILE *fp, char *buf, int p)
-[v _pad `(i ~T0 @X0 1 sf3`*S1`*uc`i ]
-"73
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 73: {
+"193
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 193: static void pad(FILE *fp, char *buf, int p)
+[v _pad `(v ~T0 @X0 1 sf3`*S1`*uc`i ]
+"194
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 194: {
 {
 [e :U _pad ]
-"72
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 72: static int pad(FILE *fp, char *buf, int p)
+"193
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 193: static void pad(FILE *fp, char *buf, int p)
 [v _fp `*S1 ~T0 @X0 1 r1 ]
 [v _buf `*uc ~T0 @X0 1 r2 ]
 [v _p `i ~T0 @X0 1 r3 ]
-"73
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 73: {
+"194
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 194: {
 [f ]
-"74
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 74:     int i, w;
+"195
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 195:     int i;
 [v _i `i ~T0 @X0 1 a ]
-[v _w `i ~T0 @X0 1 a ]
-"77
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 77:     if (flags & (1 << 0)) {
-[e $ ! != & _flags << -> 1 `i -> 0 `i -> 0 `i 10  ]
+"199
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 199:     if (flags & (1 << 0)) {
+[e $ ! != & -> _flags `i << -> 1 `i -> 0 `i -> 0 `i 11  ]
 {
-"78
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 78:         fputs((const char *)buf, fp);
-[e ( _fputs (2 , -> _buf `*Cuc _fp ]
-"79
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 79:     }
-}
-[e :U 10 ]
-"82
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 82:     w = (p < 0) ? 0 : p;
-[e = _w ? < _p -> 0 `i : -> 0 `i _p ]
-"83
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 83:     i = 0;
-[e = _i -> 0 `i ]
-"84
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 84:     while (i < w) {
-[e $U 11  ]
-[e :U 12 ]
-{
-"85
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 85:         fputc(' ', fp);
-[e ( _fputc (2 , -> -> 32 `ui `i _fp ]
-"86
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 86:         ++i;
-[e =+ _i -> 1 `i ]
-"87
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 87:     }
+"200
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 200:         fputs((const char *)buf, fp);
+[e ( _fputs (2 , _buf _fp ]
+"201
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 201:     }
 }
 [e :U 11 ]
-"84
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 84:     while (i < w) {
-[e $ < _i _w 12  ]
-[e :U 13 ]
-"90
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 90:     if (!(flags & (1 << 0))) {
-[e $ ! ! != & _flags << -> 1 `i -> 0 `i -> 0 `i 14  ]
+"205
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 205:  if (p < 0) {
+[e $ ! < _p -> 0 `i 12  ]
 {
-"91
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 91:         fputs((const char *)buf, fp);
-[e ( _fputs (2 , -> _buf `*Cuc _fp ]
-"92
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 92:     }
+"206
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 206:   p = 0;
+[e = _p -> 0 `i ]
+"207
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 207:  }
 }
+[e :U 12 ]
+"208
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 208:     i = 0;
+[e = _i -> 0 `i ]
+"209
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 209:     while (i < p) {
+[e $U 13  ]
 [e :U 14 ]
-"94
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 94:     return (int)(strlen(buf) + (size_t)w);
-[e ) -> + ( _strlen (1 -> _buf `*Cuc -> _w `ui `i ]
-[e $UE 9  ]
-"95
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 95: }
-[e :UE 9 ]
+{
+"210
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 210:         fputc(' ', fp);
+[e ( _fputc (2 , -> -> 32 `ui `i _fp ]
+"211
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 211:         ++i;
+[e =+ _i -> 1 `i ]
+"212
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 212:     }
 }
-"287
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 287: static int dtoa(FILE *fp, long long d)
-[v _dtoa `(i ~T0 @X0 1 sf2`*S1`o ]
-"288
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 288: {
+[e :U 13 ]
+"209
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 209:     while (i < p) {
+[e $ < _i _p 14  ]
+[e :U 15 ]
+"216
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 216:     if (!(flags & (1 << 0))) {
+[e $ ! ! != & -> _flags `i << -> 1 `i -> 0 `i -> 0 `i 16  ]
 {
-[e :U _dtoa ]
-"287
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 287: static int dtoa(FILE *fp, long long d)
-[v _fp `*S1 ~T0 @X0 1 r1 ]
-[v _d `o ~T0 @X0 1 r2 ]
-"288
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 288: {
-[f ]
-"289
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 289:     int i, p, s, w;
-[v _i `i ~T0 @X0 1 a ]
-[v _p `i ~T0 @X0 1 a ]
-[v _s `i ~T0 @X0 1 a ]
-[v _w `i ~T0 @X0 1 a ]
-"290
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 290:     long long n;
-[v _n `o ~T0 @X0 1 a ]
-"293
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 293:     n = d;
-[e = _n _d ]
-"294
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 294:     s = n < 0 ? 1 : 0;
-[e = _s ? < _n -> -> 0 `i `o : -> 1 `i -> 0 `i ]
-"295
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 295:     if (s) {
-[e $ ! != _s -> 0 `i 16  ]
-{
-"296
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 296:         n = -n;
-[e = _n -U _n ]
-"297
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 297:     }
+"218
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 218:         fputs((const char *)buf, fp);
+[e ( _fputs (2 , _buf _fp ]
+"220
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 220:     }
 }
 [e :U 16 ]
-"300
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 300:     if (!(prec < 0)) {
-[e $ ! ! < _prec -> 0 `i 17  ]
-{
-"301
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 301:         flags &= ~(1 << 1);
-[e =& _flags ~ << -> 1 `i -> 1 `i ]
-"302
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 302:     }
+"226
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 226: }
+[e :UE 10 ]
 }
-[e :U 17 ]
-"303
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 303:     p = (0 < prec) ? prec : 1;
-[e = _p ? < -> 0 `i _prec : _prec -> 1 `i ]
-"304
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 304:     w = width;
-[e = _w _width ]
-"305
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 305:     if (s || (flags & (1 << 2))) {
-[e $ ! || != _s -> 0 `i != & _flags << -> 1 `i -> 2 `i -> 0 `i 18  ]
+"513
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 513: static void dtoa(FILE *fp, vfpf_sint_t d)
+[v _dtoa `(v ~T0 @X0 1 sf2`*S1`i ]
+"514
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 514: {
 {
-"306
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 306:         --w;
+[e :U _dtoa ]
+"513
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 513: static void dtoa(FILE *fp, vfpf_sint_t d)
+[v _fp `*S1 ~T0 @X0 1 r1 ]
+[v _d `i ~T0 @X0 1 r2 ]
+"514
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 514: {
+[f ]
+"515
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 515:  char s;
+[v _s `uc ~T0 @X0 1 a ]
+"516
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 516:     int i, w;
+[v _i `i ~T0 @X0 1 a ]
+[v _w `i ~T0 @X0 1 a ]
+"520
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 520:  _Bool p = 1;
+[v _p `a ~T0 @X0 1 a ]
+[e = _p -> -> 1 `i `a ]
+"524
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 524:     s = d < 0 ? 1 : 0;
+[e = _s -> ? < _d -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"535
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 535:     w = width;
+[e = _w _width ]
+"536
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 536:     if (s
+[e $ ! != -> _s `i -> 0 `i 18  ]
+"540
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 540:     ) {
+{
+"541
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 541:         --w;
 [e =- _w -> 1 `i ]
-"307
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 307:     }
+"542
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 542:   s = s ? '-' : '+';
+[e = _s -> ? != -> _s `i -> 0 `i : -> 45 `ui -> 43 `ui `uc ]
+"543
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 543:     }
 }
 [e :U 18 ]
-"310
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 310:     i = sizeof(dbuf) - 1;
+"552
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 552:     i = sizeof(dbuf) - 1;
 [e = _i -> - -> # _dbuf `ui -> -> 1 `i `ui `i ]
-"311
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 311:     dbuf[i] = '\0';
+"553
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 553:     dbuf[i] = '\0';
 [e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> -> 0 `ui `uc ]
-"312
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 312:     while (!(i < 1) && (n || (0 < p) || ((0 < w) && (flags & (1 << 1))))) {
+"554
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 554:     while (!(i < 1) && (d != 0
 [e $U 19  ]
 [e :U 20 ]
+"563
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 563:     )) {
 {
-"313
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 313:         --i;
+"564
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 564:         --i;
 [e =- _i -> 1 `i ]
-"314
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 314:         dbuf[i] = (char)((int)'0' + abs(n % 10));
-[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> + -> -> 48 `ui `i ( _abs (1 -> % _n -> -> 10 `i `o `i `uc ]
-"315
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 315:         --p;
-[e =- _p -> 1 `i ]
-"316
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 316:         --w;
+"565
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 565:         dbuf[i] = (char)((int)'0' + abs(d % 10));
+[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> + -> -> 48 `ui `i ( _abs (1 % _d -> 10 `i `uc ]
+"569
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 569:   p = 0;
+[e = _p -> -> 0 `i `a ]
+"571
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 571:         --w;
 [e =- _w -> 1 `i ]
-"317
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 317:         n = n / 10;
-[e = _n / _n -> -> 10 `i `o ]
-"318
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 318:     }
+"572
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 572:         d = d / 10;
+[e = _d / _d -> 10 `i ]
+"573
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 573:     }
 }
 [e :U 19 ]
-"312
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 312:     while (!(i < 1) && (n || (0 < p) || ((0 < w) && (flags & (1 << 1))))) {
-[e $ && ! < _i -> 1 `i || || != _n -> -> 0 `i `o < -> 0 `i _p && < -> 0 `i _w != & _flags << -> 1 `i -> 1 `i -> 0 `i 20  ]
+"554
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 554:     while (!(i < 1) && (d != 0
+[e $ && ! < _i -> 1 `i || != _d -> 0 `i != -> _p `i -> 0 `i 20  ]
 [e :U 21 ]
-"321
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 321:     if (s || (flags & (1 << 2))) {
-[e $ ! || != _s -> 0 `i != & _flags << -> 1 `i -> 2 `i -> 0 `i 22  ]
+"576
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 576:     if (s != 0) {
+[e $ ! != -> _s `i -> 0 `i 22  ]
 {
-"322
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 322:         --i;
+"577
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 577:         --i;
 [e =- _i -> 1 `i ]
-"323
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 323:         dbuf[i] = s ? '-' : '+';
-[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> ? != _s -> 0 `i : -> 45 `ui -> 43 `ui `uc ]
-"324
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 324:     }
+"578
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 578:         dbuf[i] = s;
+[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _s ]
+"579
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 579:     }
 }
 [e :U 22 ]
-"327
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 327:     return pad(fp, &dbuf[i], w);
-[e ) ( _pad (3 , , _fp &U *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _w ]
-[e $UE 15  ]
-"328
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 328: }
-[e :UE 15 ]
+"582
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 582:     return (void) pad(fp, &dbuf[i], w);
+[e ) -> ( _pad (3 , , _fp &U *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _w `v ]
+[e $UE 17  ]
+"583
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 583: }
+[e :UE 17 ]
 }
-"645
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 645: static int xtoa(FILE *fp, unsigned long long d, char x)
-[v _xtoa `(i ~T0 @X0 1 sf3`*S1`uo`uc ]
-"646
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 646: {
+"1055
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1055: static void xtoa(FILE *fp, vfpf_uint_t d)
+[v _xtoa `(v ~T0 @X0 1 sf2`*S1`ui ]
+"1058
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1058: {
 {
 [e :U _xtoa ]
-"645
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 645: static int xtoa(FILE *fp, unsigned long long d, char x)
+"1055
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1055: static void xtoa(FILE *fp, vfpf_uint_t d)
 [v _fp `*S1 ~T0 @X0 1 r1 ]
-[v _d `uo ~T0 @X0 1 r2 ]
-[v _x `uc ~T0 @X0 1 r3 ]
-"646
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 646: {
+[v _d `ui ~T0 @X0 1 r2 ]
+"1058
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1058: {
 [f ]
-"647
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 647:     int c, i, p, w;
-[v _c `i ~T0 @X0 1 a ]
+"1059
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1059:  char c;
+[v _c `uc ~T0 @X0 1 a ]
+"1063
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1063:     int i, w;
 [v _i `i ~T0 @X0 1 a ]
-[v _p `i ~T0 @X0 1 a ]
 [v _w `i ~T0 @X0 1 a ]
-"648
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 648:     unsigned long long n;
-[v _n `uo ~T0 @X0 1 a ]
-"651
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 651:     if (!(prec < 0)) {
-[e $ ! ! < _prec -> 0 `i 24  ]
-{
-"652
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 652:         flags &= ~(1 << 1);
-[e =& _flags ~ << -> 1 `i -> 1 `i ]
-"653
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 653:     }
-}
-[e :U 24 ]
-"654
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 654:     p = (0 < prec) ? prec : 1;
-[e = _p ? < -> 0 `i _prec : _prec -> 1 `i ]
-"655
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 655:     w = width;
+"1067
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1067:  _Bool p = 1;
+[v _p `a ~T0 @X0 1 a ]
+[e = _p -> -> 1 `i `a ]
+"1082
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1082:     w = width;
 [e = _w _width ]
-"656
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 656:     if (flags & (1 << 4)) {
-[e $ ! != & _flags << -> 1 `i -> 4 `i -> 0 `i 25  ]
-{
-"657
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 657:         w -= 2;
-[e =- _w -> 2 `i ]
-"658
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 658:     }
-}
-[e :U 25 ]
-"661
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 661:     n = d;
-[e = _n _d ]
-"662
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 662:     i = sizeof(dbuf) - 1;
+"1095
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1095:     i = sizeof(dbuf) - 1;
 [e = _i -> - -> # _dbuf `ui -> -> 1 `i `ui `i ]
-"663
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 663:     dbuf[i] = '\0';
+"1096
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1096:     dbuf[i] = '\0';
 [e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> -> 0 `ui `uc ]
-"664
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 664:     while (!(i < 2) && (n || (0 < p) || ((0 < w) && (flags & (1 << 1))))) {
-[e $U 26  ]
+"1097
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1097:     while (!(i < 2) && (d != 0
+[e $U 24  ]
+[e :U 25 ]
+"1106
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1106:     )) {
+{
+"1107
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1107:         --i;
+[e =- _i -> 1 `i ]
+"1108
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1108:         c = d & 0x0f;
+[e = _c -> & _d -> -> 15 `i `ui `uc ]
+"1109
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1109:   if (c < 10) {
+[e $ ! < -> _c `i -> 10 `i 27  ]
+{
+"1110
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1110:    c += '0';
+[e =+ _c -> -> 48 `ui `uc ]
+"1111
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1111:   }
+}
+[e $U 28  ]
+"1112
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1112:   else {
 [e :U 27 ]
 {
-"665
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 665:         --i;
-[e =- _i -> 1 `i ]
-"666
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 666:         c = n & 0x0f;
-[e = _c -> & _n -> -> -> 15 `i `o `uo `i ]
-"667
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 667:         c = (c < 10) ? (int)'0' + c : (int)'a' + (c - 10);
-[e = _c ? < _c -> 10 `i : + -> -> 48 `ui `i _c + -> -> 97 `ui `i - _c -> 10 `i ]
-"668
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 668:         if ((0 ? isupper((int)x) : ((unsigned)((int)x)-'A') < 26) && (0 ? isalpha(c) : (((unsigned)(c)|32)-'a') < 26)) {
-[e $ ! && != ? != -> 0 `i -> 0 `i : ( _isupper (1 -> _x `i -> < - -> -> _x `i `ui -> 65 `ui -> -> 26 `i `ui `i -> 0 `i != ? != -> 0 `i -> 0 `i : ( _isalpha (1 _c -> < - | -> _c `ui -> -> 32 `i `ui -> 97 `ui -> -> 26 `i `ui `i -> 0 `i 29  ]
-{
-"669
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 669:             c = toupper(c);
-[e = _c ( _toupper (1 _c ]
-"670
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 670:         }
+"1116
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1116:    c += 'a' - 10;
+[e =+ _c -> - -> 97 `ui -> -> 10 `i `ui `uc ]
+"1120
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1120:   }
 }
-[e :U 29 ]
-"671
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 671:         dbuf[i] = (char)c;
-[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> _c `uc ]
-"672
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 672:         --p;
-[e =- _p -> 1 `i ]
-"673
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 673:         --w;
-[e =- _w -> 1 `i ]
-"674
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 674:         n = n >> 4;
-[e = _n >> _n -> 4 `i ]
-"675
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 675:     }
-}
-[e :U 26 ]
-"664
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 664:     while (!(i < 2) && (n || (0 < p) || ((0 < w) && (flags & (1 << 1))))) {
-[e $ && ! < _i -> 2 `i || || != _n -> -> -> 0 `i `o `uo < -> 0 `i _p && < -> 0 `i _w != & _flags << -> 1 `i -> 1 `i -> 0 `i 27  ]
 [e :U 28 ]
-"678
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 678:     if (flags & (1 << 4)) {
-[e $ ! != & _flags << -> 1 `i -> 4 `i -> 0 `i 30  ]
-{
-"679
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 679:         --i;
-[e =- _i -> 1 `i ]
-"680
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 680:         dbuf[i] = x;
-[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _x ]
-"681
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 681:         --i;
-[e =- _i -> 1 `i ]
-"682
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 682:         dbuf[i] = '0';
-[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux -> -> 48 `ui `uc ]
-"683
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 683:     }
+"1121
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1121:   dbuf[i] = c;
+[e = *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _c ]
+"1125
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1125:   p = 0;
+[e = _p -> -> 0 `i `a ]
+"1127
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1127:         --w;
+[e =- _w -> 1 `i ]
+"1128
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1128:         d = d >> 4;
+[e = _d >> _d -> 4 `i ]
+"1129
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1129:     }
 }
-[e :U 30 ]
-"686
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 686:     return pad(fp, &dbuf[i], w);
-[e ) ( _pad (3 , , _fp &U *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _w ]
+[e :U 24 ]
+"1097
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1097:     while (!(i < 2) && (d != 0
+[e $ && ! < _i -> 2 `i || != _d -> -> 0 `i `ui != -> _p `i -> 0 `i 25  ]
+[e :U 26 ]
+"1152
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1152:     return (void) pad(fp, &dbuf[i], w);
+[e ) -> ( _pad (3 , , _fp &U *U + &U _dbuf * -> -> _i `ui `ux -> -> # *U &U _dbuf `ui `ux _w `v ]
 [e $UE 23  ]
-"687
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 687: }
+"1153
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1153: }
 [e :UE 23 ]
 }
-"692
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 692: static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
-[v _vfpfcnvrt `(i ~T0 @X0 1 sf3`*S1`**uc`**v ]
-"693
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 693: {
+"1158
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1158: read_prec_or_width (const char **fmt, va_list *ap) {
+[v _read_prec_or_width `(i ~T0 @X0 1 sf2`**Cuc`*F1169 ]
+{
+[e :U _read_prec_or_width ]
+[v _fmt `**Cuc ~T0 @X0 1 r1 ]
+[v F1172 `*v ~T0 @X0 -> -> 1 `i `ux t ]
+[v _ap `*F1172 ~T0 @X0 1 r2 ]
+[f ]
+"1159
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1159:     int n = 0;
+[v _n `i ~T0 @X0 1 a ]
+[e = _n -> 0 `i ]
+"1160
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1160:     if ((*fmt)[0] == '*') {
+[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 42 `ui 30  ]
+{
+"1161
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1161:         ++*fmt;
+[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
+"1162
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1162:         n = (*(int *)__va_arg(*(int **)*ap, (int)0));
+[e = _n *U -> ( ___va_arg , (. -> *U -> &U *U _ap `**i `*v -> 0 `i `*i ]
+"1163
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1163:     } else {
+}
+[e $U 31  ]
+[e :U 30 ]
+{
+"1164
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1164:         unsigned char c;
+[v _c `uc ~T0 @X0 1 a ]
+"1165
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1165:         while ((c = ((unsigned)(*fmt)[0]) - '0') < 10) {
+[e $U 32  ]
+[e :U 33 ]
+{
+"1166
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1166:             n = n * 10 + c;
+[e = _n + * _n -> 10 `i -> _c `i ]
+"1167
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1167:             ++*fmt;
+[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
+"1168
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1168:         }
+}
+[e :U 32 ]
+"1165
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1165:         while ((c = ((unsigned)(*fmt)[0]) - '0') < 10) {
+[e $ < -> = _c -> - -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 48 `ui `uc `i -> 10 `i 33  ]
+[e :U 34 ]
+"1169
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1169:     }
+}
+[e :U 31 ]
+"1170
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1170:     return n;
+[e ) _n ]
+[e $UE 29  ]
+"1171
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1171: }
+[e :UE 29 ]
+}
+"1177
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1177: vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
+[v _vfpfcnvrt `(v ~T0 @X0 1 sf3`*S1`**uc`**v ]
+"1178
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1178: {
 {
 [e :U _vfpfcnvrt ]
-"692
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 692: static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
+"1177
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1177: vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
 [v _fp `*S1 ~T0 @X0 1 r1 ]
 [v _fmt `**uc ~T0 @X0 1 r2 ]
 [v _ap `**v ~T0 @X0 1 r3 ]
-"693
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 693: {
+"1178
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1178: {
 [f ]
-"694
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 694:     char c, *cp, ct[3];
+"1179
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1179:     char c, *cp;
 [v _c `uc ~T0 @X0 1 a ]
 [v _cp `*uc ~T0 @X0 1 a ]
-[v _ct `uc ~T0 @X0 -> 3 `i a ]
-"695
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 695:     int done, i;
-[v _done `i ~T0 @X0 1 a ]
-[v _i `i ~T0 @X0 1 a ]
-"696
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 696:     long long ll;
-[v _ll `o ~T0 @X0 1 a ]
-"697
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 697:     unsigned long long llu;
-[v _llu `uo ~T0 @X0 1 a ]
-"698
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 698:     long double f;
-[v _f `d ~T0 @X0 1 a ]
-"699
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 699:     void *vp;
-[v _vp `*v ~T0 @X0 1 a ]
-"702
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 702:     if ((*fmt)[0] == '%') {
-[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 37 `ui 32  ]
+"1180
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1180:     _Bool done;
+[v _done `a ~T0 @X0 1 a ]
+"1188
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1188:  } convarg;
+[v _convarg `S36 ~T0 @X0 1 a ]
+"1201
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1201:     if ((*fmt)[0] == '%') {
+[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 37 `ui 37  ]
 {
-"703
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 703:         ++*fmt;
+"1202
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1202:         ++*fmt;
 [e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"705
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 705:         flags = width = 0;
-[e = _flags = _width -> 0 `i ]
-"706
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 706:         prec = -1;
+"1204
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1204:         flags = width = 0;
+[e = _flags -> = _width -> 0 `i `uc ]
+"1205
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1205:         prec = -1;
 [e = _prec -U -> 1 `i ]
-"745
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 745:         if ((*fmt)[0] == '*') {
-[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 42 `ui 33  ]
+[v F1187 `*v ~T0 @X0 -> -> 1 `i `ux t ]
+"1256
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1256:   width = read_prec_or_width(fmt, ap);
+[e = _width ( _read_prec_or_width (2 , -> _fmt `**Cuc -> _ap `*F1187 ]
+"1257
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1257:   if (width < 0) {
+[e $ ! < _width -> 0 `i 38  ]
 {
-"746
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 746:             ++*fmt;
-[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"747
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 747:             width = (*(int *)__va_arg(*(int **)ap, (int)0));
-[e = _width *U -> ( ___va_arg , (. -> *U -> _ap `**i `*v -> 0 `i `*i ]
-"748
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 748:             if (width < 0) {
-[e $ ! < _width -> 0 `i 34  ]
-{
-"749
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 749:                 flags |= (1 << 0);
-[e =| _flags << -> 1 `i -> 0 `i ]
-"750
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 750:                 width = -width;
+"1258
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1258:    flags |= (1 << 0);
+[e =| _flags -> << -> 1 `i -> 0 `i `uc ]
+"1259
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1259:    width = -width;
 [e = _width -U _width ]
-"751
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 751:             }
+"1260
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1260:   }
 }
-[e :U 34 ]
-"752
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 752:         } else {
-}
-[e $U 35  ]
-[e :U 33 ]
-{
-"753
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 753:             width = atoi(*fmt);
-[e = _width ( _atoi (1 -> *U _fmt `*Cuc ]
-"754
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 754:             while ((0 ? isdigit((*fmt)[0]) : ((unsigned)((*fmt)[0])-'0') < 10)) {
-[e $U 36  ]
-[e :U 37 ]
-{
-"755
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 755:                 ++*fmt;
-[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"756
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 756:             }
-}
-[e :U 36 ]
-"754
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 754:             while ((0 ? isdigit((*fmt)[0]) : ((unsigned)((*fmt)[0])-'0') < 10)) {
-[e $ != ? != -> 0 `i -> 0 `i : ( _isdigit (1 -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `i -> < - -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 48 `ui -> -> 10 `i `ui `i -> 0 `i 37  ]
 [e :U 38 ]
-"757
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 757:         }
-}
-[e :U 35 ]
-"847
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 847:         if ((*fmt[0] == 'd') || (*fmt[0] == 'i')) {
-[e $ ! || == -> *U *U + _fmt * -> -> 0 `i `x -> -> # *U _fmt `i `x `ui -> 100 `ui == -> *U *U + _fmt * -> -> 0 `i `x -> -> # *U _fmt `i `x `ui -> 105 `ui 39  ]
+"1291
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1291:   cp = *fmt;
+[e = _cp *U _fmt ]
+"1361
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1361:   if (*cp == 'd' || *cp == 'i') {
+[e $ ! || == -> *U _cp `ui -> 100 `ui == -> *U _cp `ui -> 105 `ui 39  ]
 {
-"849
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 849:             ++*fmt;
-[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"850
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 850:             ll = (long long)(*(int *)__va_arg(*(int **)ap, (int)0));
-[e = _ll -> *U -> ( ___va_arg , (. -> *U -> _ap `**i `*v -> 0 `i `*i `o ]
-"852
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 852:             return dtoa(fp, ll);
-[e ) ( _dtoa (2 , _fp _ll ]
-[e $UE 31  ]
-"853
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 853:         }
+"1404
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1404:    convarg.sint = (vfpf_sint_t)(int)(*(int *)__va_arg(*(int **)ap, (int)0));
+[e = . _convarg 0 *U -> ( ___va_arg , (. -> *U -> _ap `**i `*v -> 0 `i `*i ]
+"1406
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1406:    *fmt = cp+1;
+[e = *U _fmt + _cp * -> -> 1 `i `x -> -> # *U _cp `i `x ]
+"1432
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1432:    return (void) dtoa(fp, convarg.sint);
+[e ) -> ( _dtoa (2 , _fp . _convarg 0 `v ]
+[e $UE 35  ]
+"1434
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1434:   }
 }
 [e :U 39 ]
-"1296
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1296:         if ((*fmt[0] == 'x') || (*fmt[0] == 'X')) {
-[e $ ! || == -> *U *U + _fmt * -> -> 0 `i `x -> -> # *U _fmt `i `x `ui -> 120 `ui == -> *U *U + _fmt * -> -> 0 `i `x -> -> # *U _fmt `i `x `ui -> 88 `ui 40  ]
+"1439
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1439:   if (0
+[e $ ! || != -> 0 `i -> 0 `i == -> *U _cp `ui -> 120 `ui 40  ]
+"1452
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1452:     ) {
 {
-"1298
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1298:             c = (*fmt)[0];
-[e = _c *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x ]
-"1299
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1299:             ++*fmt;
-[e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"1300
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1300:             llu = (unsigned long long)(*(unsigned int *)__va_arg(*(unsigned int **)ap, (unsigned int)0));
-[e = _llu -> *U -> ( ___va_arg , (. -> *U -> _ap `**ui `*v -> -> 0 `i `ui `*ui `uo ]
-"1302
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1302:             return xtoa(fp, llu, c);
-[e ) ( _xtoa (3 , , _fp _llu _c ]
-[e $UE 31  ]
-"1303
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1303:         }
+"1495
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1495:    convarg.uint = (vfpf_uint_t)(unsigned int)(*(unsigned int *)__va_arg(*(unsigned int **)ap, (unsigned int)0));
+[e = . _convarg 1 *U -> ( ___va_arg , (. -> *U -> _ap `**ui `*v -> -> 0 `i `ui `*ui ]
+"1497
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1497:    *fmt = cp+1;
+[e = *U _fmt + _cp * -> -> 1 `i `x -> -> # *U _cp `i `x ]
+"1498
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1498:    switch (*cp) {
+[e $U 42  ]
+{
+"1550
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1550:     case 'x':
+[e :U 43 ]
+"1586
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1586:      return (void) xtoa(fp,convarg.uint);
+[e ) -> ( _xtoa (2 , _fp . _convarg 1 `v ]
+[e $UE 35  ]
+"1589
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1589:    }
+}
+[e $U 41  ]
+[e :U 42 ]
+[e [\ *U _cp , $ -> -> 120 `ui `i 43
+ 41 ]
+[e :U 41 ]
+"1590
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1590:   }
 }
 [e :U 40 ]
-"1372
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1372:         if ((*fmt)[0] == '%') {
-[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 37 `ui 41  ]
+"1798
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1798:         if ((*fmt)[0] == '%') {
+[e $ ! == -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `ui -> 37 `ui 44  ]
 {
-"1373
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1373:             ++*fmt;
+"1799
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1799:             ++*fmt;
 [e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"1374
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1374:             fputc((int)'%', fp);
+"1800
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1800:             fputc((int)'%', fp);
 [e ( _fputc (2 , -> -> 37 `ui `i _fp ]
-"1375
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1375:             return 1;
-[e ) -> 1 `i ]
-[e $UE 31  ]
-"1376
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1376:         }
+"1801
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1801:             return (void) 1;
+[e ) -> -> 1 `i `v ]
+[e $UE 35  ]
+"1802
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1802:         }
 }
-[e :U 41 ]
-"1379
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1379:         ++*fmt;
+[e :U 44 ]
+"1806
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1806:         ++*fmt;
 [e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"1380
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1380:         return 0;
-[e ) -> 0 `i ]
-[e $UE 31  ]
-"1381
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1381:     }
+"1807
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1807:         return (void) 0;
+[e ) -> -> 0 `i `v ]
+[e $UE 35  ]
+"1808
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1808:     }
 }
-[e :U 32 ]
-"1384
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1384:     fputc((int)(*fmt)[0], fp);
+[e :U 37 ]
+"1811
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1811:     fputc((int)(*fmt)[0], fp);
 [e ( _fputc (2 , -> *U + *U _fmt * -> -> 0 `i `x -> -> # *U *U _fmt `i `x `i _fp ]
-"1385
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1385:     ++*fmt;
+"1812
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1812:     ++*fmt;
 [e =+ *U _fmt * -> -> 1 `i `x -> -> # *U *U _fmt `i `x ]
-"1386
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1386:     return 1;
-[e ) -> 1 `i ]
-[e $UE 31  ]
-"1387
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1387: }
-[e :UE 31 ]
+"1813
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1813:     return (void) 1;
+[e ) -> -> 1 `i `v ]
+[e $UE 35  ]
+"1814
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1814: }
+[e :UE 35 ]
 }
-"1390
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1390: int vfprintf(FILE *fp, const char *fmt, va_list ap)
+"1817
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1817: int vfprintf(FILE *fp, const char *fmt, va_list ap)
 [v _vfprintf `(i ~T0 @X0 1 ef3`*S1`*Cuc`**v ]
-"1391
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1391: {
+"1818
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1818: {
 {
 [e :U _vfprintf ]
-"1390
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1390: int vfprintf(FILE *fp, const char *fmt, va_list ap)
+"1817
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1817: int vfprintf(FILE *fp, const char *fmt, va_list ap)
 [v _fp `*S1 ~T0 @X0 1 r1 ]
 [v _fmt `*Cuc ~T0 @X0 1 r2 ]
 [v _ap `**v ~T0 @X0 1 r3 ]
-"1391
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1391: {
+"1818
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1818: {
 [f ]
-"1393
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1393:     char *cfmt;
+"1820
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1820:     char *cfmt;
 [v _cfmt `*uc ~T0 @X0 1 a ]
-"1395
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1395:     cfmt = (char *)fmt;
-[e = _cfmt -> _fmt `*uc ]
-"1396
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1396:     nout = 0;
-[e = _nout -> 0 `i ]
-"1397
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1397:     while (*cfmt) {
-[e $U 43  ]
-[e :U 44 ]
+"1822
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1822:     cfmt = (char *)fmt;
+[e = _cfmt _fmt ]
+"1826
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1826:     while (*cfmt) {
+[e $U 46  ]
+[e :U 47 ]
 {
-"1398
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1398:         nout += vfpfcnvrt(fp, &cfmt, ap);
-[e =+ _nout ( _vfpfcnvrt (3 , , _fp &U _cfmt _ap ]
-"1399
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1399:     }
+"1830
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1830:    vfpfcnvrt(fp, &cfmt, ap);
+[e ( _vfpfcnvrt (3 , , _fp &U _cfmt _ap ]
+"1831
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1831:     }
 }
-[e :U 43 ]
-"1397
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1397:     while (*cfmt) {
-[e $ != -> *U _cfmt `i -> 0 `i 44  ]
-[e :U 45 ]
-"1400
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1400:     return nout;
-[e ) _nout ]
-[e $UE 42  ]
-"1404
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c: 1404: }
-[e :UE 42 ]
+[e :U 46 ]
+"1826
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1826:     while (*cfmt) {
+[e $ != -> *U _cfmt `i -> 0 `i 47  ]
+[e :U 48 ]
+"1835
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1835:  return 0;
+[e ) -> 0 `i ]
+[e $UE 45  ]
+"1840
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c: 1840: }
+[e :UE 45 ]
 }

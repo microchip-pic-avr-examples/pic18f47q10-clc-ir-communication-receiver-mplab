@@ -1,15 +1,13 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+/**
+ * PWM3 Generated Driver API Header File
  *
- * @version MAIN Driver Version 1.0.2
+ * @file pwm3.h
  *
- * @version Package Version: 3.1.2
+ * @defgroup pwm3 PWM3
+ *
+ * @brief This file contains the API prototypes for the PWM3 driver.
+ *
+ * @version PWM3 Driver Version 2.0.4
 */
 
 /*
@@ -32,30 +30,38 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+#ifndef PWM3_H
+ #define PWM3_H
+ 
+ /**
+  * Section: Included Files
+  */
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
+ #include <xc.h>
+ #include <stdint.h>
 
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}
+ /**
+  * Section: Macro Declarations
+ */
+
+ #define PWM3_INITIALIZE_DUTY_VALUE    0
+
+
+/**
+ * @ingroup pwm3
+ * @brief Initializes the PWM3 interface.
+ * @param None.
+ * @return None.
+ */
+ void PWM3_Initialize(void);
+
+ /**
+ * @ingroup pwm3
+ * @brief Loads the 16-bit duty cycle value.
+ * @param uint16_t dutyValue - PWM3 duty cycle value to be loaded.
+ * @return None.
+ */
+ void PWM3_LoadDutyValue(uint16_t dutyValue);
+ 
+ #endif	//PWM3_H

@@ -1,17 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * DELAY Generated Driver File
  * 
- * @file main.c
+ * @file delay.c
  * 
- * @defgroup main MAIN
+ * @ingroup delay
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains functions to generate delays in the range of milliseconds and microseconds, using timer ticks to indicate delay length.
  *
- * @version MAIN Driver Version 1.0.2
- *
- * @version Package Version: 3.1.2
+ * @version DELAY Driver Version 1.1.0
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,30 +29,26 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
-{
-    SYSTEM_Initialize(); 
+#include "../../system/config_bits.h"
+#include <xc.h>
+#include <stdint.h>
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
+void DELAY_milliseconds(uint16_t milliseconds) {
+    while(milliseconds--){ 
+        __delay_ms(1); 
+    }
+}
 
-    while(1)
+void DELAY_microseconds(uint16_t microseconds) {
+    while( microseconds >= 32)
     {
-        ApplicationTask();
-    }    
+        __delay_us(32);
+        microseconds -= 32;
+    }
+    
+    while(microseconds--)
+    {
+        __delay_us(1);
+    }
 }

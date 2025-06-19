@@ -1,15 +1,15 @@
- /*
- * MAIN Generated Driver File
+/**
+ * CLOCK Generated Driver Source File
  * 
- * @file main.c
+ * @file clock.c
  * 
- * @defgroup main MAIN
+ * @ingroup clockdriver 
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes for the Clock driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.4
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 4.3.7
 */
 
 /*
@@ -32,30 +32,27 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
+#include <xc.h>
+#include "../clock.h"
+
+void CLOCK_Initialize(void)
 {
-    SYSTEM_Initialize(); 
+    // Set the CLOCK CONTROL module to the options selected in the user interface.
+    OSCCON1 = (0 << _OSCCON1_NDIV_POSN)   // NDIV 1
+        | (6 << _OSCCON1_NOSC_POSN);  // NOSC HFINTOSC
+    OSCCON3 = (0 << _OSCCON3_SOSCPWR_POSN)   // SOSCPWR Low power
+        | (0 << _OSCCON3_CSWHOLD_POSN);  // CSWHOLD may proceed
+    OSCEN = (0 << _OSCEN_EXTOEN_POSN)   // EXTOEN disabled
+        | (0 << _OSCEN_HFOEN_POSN)   // HFOEN disabled
+        | (0 << _OSCEN_MFOEN_POSN)   // MFOEN disabled
+        | (0 << _OSCEN_LFOEN_POSN)   // LFOEN disabled
+        | (0 << _OSCEN_SOSCEN_POSN)   // SOSCEN disabled
+        | (0 << _OSCEN_ADOEN_POSN);  // ADOEN disabled
+    OSCFRQ = (6 << _OSCFRQ_HFFRQ_POSN);  // HFFRQ 32_MHz
+    OSCTUNE = (0 << _OSCTUNE_TUN_POSN);  // TUN 0x0
 
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
 }
+/**
+ End of File
+*/

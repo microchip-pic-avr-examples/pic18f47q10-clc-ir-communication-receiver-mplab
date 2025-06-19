@@ -1,15 +1,15 @@
- /*
- * MAIN Generated Driver File
+/**
+ * Configuration Bits Generated Driver Header File
  * 
- * @file main.c
+ * @file config_bits.h
  * 
- * @defgroup main MAIN
+ * @defgroup config_bitsdriver CONFIGBITS Driver 
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototype for the Configuration Bits driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.2
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 2.1.5
 */
 
 /*
@@ -32,30 +32,13 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
+
+#ifndef CONFIG_BITS_H
+#define	CONFIG_BITS_H
+
+#include "../system/clock.h"
+
+#endif	/* CONFIG_BITS_H */
+/**
+ End of File
 */
-
-int main(void)
-{
-    SYSTEM_Initialize(); 
-
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}

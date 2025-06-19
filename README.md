@@ -5,7 +5,7 @@
 
 ## Introduction
   
-Many real time control applications use infrared (commonly referred to as IR) wireless technology, as a communication mode. IR communication has the merits of consuming low power and it is available at a very reasonable cost. IR communication is used in numerous control applications involving transmission of information and commands to control different house-hold appliances. Some commonly used home appliances which involve IR communication are the remote controls for television and air conditioners etc. There are various standard IR protocols in use such as S-link, RECS-80, RC-5, RC-6 and NEC. But the most commonly used protocol is NEC IR protocol.
+Many real-time control applications use infrared (commonly referred to as IR) wireless technology as a mode of communication. IR communication has the advantages of low power consumption and reasonable cost. It is widely used in various control applications that involve the transmission of information and commands to operate different household appliances. Some commonly used home appliances that utilize IR communication include remote controls for televisions, air conditioners, and more. There are several standard IR protocols in use, such as S-link, RECS-80, RC-5, RC-6, and NEC. However, the most commonly used protocol is the NEC IR protocol.
 
 
 ### To see the IR Communication transmitter and receiver demo operation video, click on the below image.
@@ -14,7 +14,7 @@ Many real time control applications use infrared (commonly referred to as IR) wi
 <br><a href="https://youtu.be/kxnTy4JSeoI" rel="nofollow"><img src="images/youtubefrontimage.png" alt="PIC Q10 " width="500"/></a>
 </p>
 
-## Useful Links
+## Related Documentation
 
 - [PIC18F47Q10 Product Page](https://www.microchip.com/wwwproducts/en/PIC18F47Q10 "PIC18F47Q10 Product Page")
 - [PIC18F47Q10 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=PIC18F47Q10&type=&language= "PIC18F47Q10 Code Examples on GitHub")
@@ -24,91 +24,50 @@ Many real time control applications use infrared (commonly referred to as IR) wi
 
 ## IR Receiver
 
-The IR receiver unit is realized using the existing evaluation boards; Curiosity Nano Base for click boards and IR Click board. TSOP38338 IR receiver module on IR click board is used for detecting received IR commands. IR receiver is implemented as shown in the figure 1.
+The IR receiver unit is implemented using existing evaluation boards: the Curiosity Nano Base for click boards and the IR Click board. The TSOP38338 IR receiver module on the IR Click board is used to detect received IR commands. The IR receiver is implemented as shown in Figure 1.
 
 <p align="center">
   <img width=auto height=auto src="images/blockdiagram.png">
   <br>Figure 1: IR Receiver <br>
 </p> 
 
-Output of the IR click, the demodulated data is connected to the microcontroller(MCU) port pin. Whenever the first falling edge is detected on the port pin, the HLT (Timer 2) module configured in monostable mode will start automatically. Timer will overflow after few ms as per period configuration. Upon timer overflow interrupt it is confirmed whether the data line is still low, and the detected falling edge is not due to electrical noise. The capture and compare peripheral (CCP) is used to capture timings of the incoming data frame. The CCP can be used with either port B or port C of the MCU and the demodulated data from IR click is connected to port pin RA1. So CLC is used as buffer or an interconnecting element to connect port pin RA1 internally to port pin RC0. RC0 is used as input to the CCP. After the first valid falling edge is detected, the CCP with falling edge interrupt is enabled and Timer 2 is disabled. The CCP along with Timer 1 is used for detecting start sequence. After start detection the captured values for the next 32 bits are stored in a buffer. While receiving data, anytime if the captured value goes out of range the transaction is aborted and registers, variables and peripherals are re-initialized for the next valid IR frame detection. If all the bits/edges are received properly, Timer 1 is stopped, CCP is disabled and Timer 2 is enabled for the next IR frame detection. The command is decoded from CCP capture buffer. Received data is checked for correct receiver address, inverse of address, 8-bit command and its inverse. If the address and inverse of address, command and inverse of command are matching then the command data is reversed as the LSB of command byte is transmitted first according to the NEC IR transmission protocol. Corresponding control action is taken for the command received.
+The output of the IR Click board, which is the demodulated data, is connected to a microcontroller (MCU) port pin. Whenever the first falling edge is detected on this port pin, the HLT (Timer 2) module, configured in monostable mode, starts automatically. The timer will overflow after a few milliseconds, as determined by the period configuration. Upon a timer overflow interrupt, it is confirmed whether the data line is still low, ensuring that the detected falling edge was not caused by electrical noise.
+
+The capture and compare peripheral (CCP) is used to capture the timings of the incoming data frame. The CCP can be used with either port B or port C of the MCU, but the demodulated data from the IR Click board is connected to port pin RA1. Therefore, the Configurable Logic Cell (CLC) is used as a buffer or interconnecting element to internally connect port pin RA1 to port pin RC0. RC0 is then used as the input to the CCP.
+
+After the first valid falling edge is detected, the CCP with falling edge interrupt is enabled, and Timer 2 is disabled. The CCP, along with Timer 1, is used for detecting the start sequence. After start detection, the captured values for the next 32 bits are stored in a buffer. While receiving data, if at any time the captured value goes out of range, the transaction is aborted, and the registers, variables, and peripherals are re-initialized for the next valid IR frame detection.
+
+If all the bits and edges are received correctly, Timer 1 is stopped, the CCP is disabled, and Timer 2 is enabled for the next IR frame detection. The command is then decoded from the CCP capture buffer. The received data is checked for the correct receiver address, the inverse of the address, the 8-bit command, and its inverse. If the address and its inverse, as well as the command and its inverse, match, the command data is reversed, since the least significant bit (LSB) of the command byte is transmitted first according to the NEC IR transmission protocol. The corresponding control action is then taken for the received command.
 
 ## Software  Tools
 
-* MPLAB® X IDE [v5.40.0 or newer](https://www.microchip.com/mplab/mplab-x-ide)
-* XC8 Compiler [v2.30.0 or newer](https://www.microchip.com/mplab/compilers)
-* Microchip PIC18F-Q Series Device Support Pack [v1.8.154 or newer](https://packs.download.microchip.com/#collapse-Microchip-PIC18F-Q-DFP-pdsc)
-* Microchip Code Configurator [v4.0.1 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
+* [MPLAB® X IDE](https://www.microchip.com/mplab/mplab-x-ide) v6.25.0 or newer
+* [XC8 Compiler](https://www.microchip.com/mplab/compilers) v3.00.0 or newer
+* [Microchip PIC18F-Q Series Device Support Pack](https://packs.download.microchip.com) v1.28.451 or newer
+* [Microchip Code Configurator](https://www.microchip.com/mplab/mplab-code-configurator) v5.6.2 or newer
+* CCP Driver v4.1.1
+* CLC Driver v4.4.0
+* MSSP Driver v7.0.3
+* PWM Driver v4.2.12
+* TMR1 Driver v5.2.0
+* TMR2 Driver v5.1.1
+* SPI Host Driver v1.2.1
 
-***Note: For running the demo, the installed tool versions should be the same or later. This example is not tested with the previous versions.***
+***Note: To run the demo, the installed tool versions should be the same as, or later than, the specified versions. This example has not been tested with earlier versions.***
 
-## Hardware used
+## Hardware Used
 
-* [PIC18F47Q10 Curiosity Nano](https://www.microchip.com/Developmenttools/ProductDetails/DM182029 "PIC18F47Q10 Curiosity Nano")
-* [Curiosity Nano Base for Click boards](https://www.microchip.com/developmenttools/ProductDetails/AC164162 "Curiosity Nano Base for Click boards")
-* [IR click]( https://www.mikroe.com/ir-click "IR click")
+* [PIC18F47Q10 Curiosity Nano](https://www.microchip.com/Developmenttools/ProductDetails/DM182029)
+* [Curiosity Nano Base for Click boards](https://www.microchip.com/developmenttools/ProductDetails/AC164162)
+* [IR click](https://www.mikroe.com/ir-click)
 
-
-## MCC settings
-
-This section shows the settings used for the system clock and the peripheral configurations in the demo example. These settings were done using the MPLAB Code Configurator (MCC). Open MCC to look at the settings of the modules.
-
-## MCC settings for IR  Receiver:
-
-In the IR receiver demo firmware the High-Frequency Internal Oscillator (HFINTOSC) is configured to generate 32MHz clock and is used as a system clock. Refer figure 2.
-
-<p align="center">
-  <img width=auto height=auto src="images/clock.png">
-  <br>Figure 2: System Clock Configuration <br>
-</p> 
-
-The demodulated data from IR Click is fed to the microcontroller port pin. The HLT (Timer2) module, configured in monostable mode starts automatically, whenever the first falling edge is detected on the port pin. Timer will overflow after 2 ms as per period configuration. Upon timer overflow interrupt it is confirmed whether the data line is still low, and the detected falling edge is not due to electrical noise. The Timer 2 configuration to ignore electrical noise is shown in the figure 3.
-
-<p align="center">
-  <img width=auto height=auto src="images/timer2.png">
-  <br>Figure 3: Timer 2 configuration to ignore electrical noise <br>
-</p> 
-
-The CCP1 module along with Timer 1 is used for capturing the commands received by IR Receiver. The CCP1 and Timer 1 modules configuration is shown in the figures 4 and 5.
-
-<p align="center">
-  <img width=auto height=auto src="images/timer1.png">
-  <br>Figure 4: Timer 1 configuration for RX <br>
-</p> 
-
-<p align="center">
-  <img width=auto height=auto src="images/ccp.png">
-  <br>Figure 5: CCP1 Configuration <br>
-</p> 
-
-The CCP module can be used with either port B or port C of the microcontroller and the demodulated data from the IR click is fed to port pin RA1. So CLC is used as buffer or an interconnecting element to connect port pin RA1 internally to port pin RC0. RC0 is used as input to the CCP module. The CLC configuration as interconnecting element is shown in the figure 6.
-
-<p align="center">
-  <img width=auto height=auto src="images/clc.png">
-  <br>Figure 6: CLC configuration as interconnecting element <br>
-</p> 
-
-For using LCD mini click MCC provides library with pre-configured SPI module along with ready to use functions Select the appropriate MSSP module under SPI column. Refer figure 7.
-
-<p align="center">
-  <img width=auto height=auto src="images/lcd.png">
-  <br>Figure 7: MCC Micro-E Click Library for LCD mini click <br>
-</p> 
-
-Set the SPI speed under MSSP foundation service library configurations section. Refer figure 8.
-
-<p align="center">
-  <img width=auto height=auto src="images/spi.png">
-  <br>Figure 8: SPI Speed Configuration in MSSP <br>
-</p> 
-
-## Hardware setup
+## Setup
 
 ##  IR Receiver
 
-* Insert IR Click board in mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
-* Insert LCD mini Click board in mikroBUS™ slot 3 of the Curiosity Nano Base for click boards.
-* MCU port pins used in the application are discribed in the below table.
+* Insert the IR Click board into mikroBUS™ slot 2 of the Curiosity Nano Base for click boards.
+* Insert the LCD mini Click board into mikroBUS™ slot 3 of the Curiosity Nano Base for click boards.
+* The MCU port pins used in the application are described in the table below.
 
 |Sr.No| MCU Port pin #|Signal Name|Signal Description|IN/OUT|  
 |:---------:|:----------:|:----------:|:----------:|:----------:|
@@ -126,45 +85,55 @@ Set the SPI speed under MSSP foundation service library configurations section. 
  
 
 **Note:**
-
-1. RC0 is configured as CCP capture input pin. This is due to the reason that PORT B or PORT C can only be used as CCP input. IR click board can feed received data only to pin RA1. So connected RC0 to RA1 internally using CLC as interconnecting element
-2. The CCP2 peripheral is configured as PWM and PORT C can be used as CCP2 output pin. RC2 is configured as CCP PWM output pin. As per the LCD mini click schematic, PWM signal for LCD brightness control should be available on PORT pin RD1. Hence, connected RC2 to RD1 internally using CLC as interconnecting element.
-3. Output of PWM3 peripheral is avaiable on RA3 pin. To control RE0 LED brightness using PWM3, short RA3 pin to RE0. 
+1. RC0 is configured as the CCP capture input pin. This is because only PORT B or PORT C can be used as CCP input. The IR Click board can feed received data only to pin RA1, so RC0 is connected to RA1 internally using the CLC as an interconnecting element.
+2. The CCP2 peripheral is configured as PWM, and PORT C can be used as the CCP2 output pin. RC2 is configured as the CCP PWM output pin. According to the LCD mini Click schematic, the PWM signal for LCD brightness control should be available on port pin RD1. Therefore, RC2 is connected to RD1 internally using the CLC as an interconnecting element.
+3. The output of the PWM3 peripheral is available on the RA3 pin. To control the RE0 LED brightness using PWM3, short the RA3 pin to RE0.
+4. After making the above hardware connections, power on the board using a micro USB cable. Build the demo firmware and load the generated hex file to the PIC18F47Q10 MCU.
 
 <p align="center">
   <img width=700 height=auto src="images/image3.png">
-  <br>Figure 9: Demo setup IR Receiver <br>
+  <br>Figure 2: Demo setup IR Receiver <br>
 </p> 
 
-* After making the above hardware connections, power on the board with micro USB cable. Build demo firmware and load the generated hex file to the PIC18F47Q10 MCU.
+## Microcontroller Peripheral Configuration
+
+| Peripherals| Configuration                         | Usage                                                                                                                                                                                                                                                                                                                                        
+|-----------|----------------------------------------|-----------|
+|Clock Control |Clock source: HFINTOSC<br>HF Internal Clock: 32 MHz<br>Clock Divider: 1 <br>Active Clock Tuning Update: Enabled | System clock                                                                                                                
+|CLC1|Enable CLC: Enabled <br> Logic Cell Mode bits: 4-input AND <br> | Provides programmable logic|                                                              
+|CLC3|Enable CLC: Enabled<br>Logic Cell Mode bits: 4-input AND<br>Select CCP2_OUT as one of the inputs| Provides programmable logic
+|CCP1| CCP Mode: Capture<br> Select Timer: Timer 1<br> Input Signal: CCP1 pin <br> Mode: Falling Edge<br> CCP Interrupt Enable: Enabled |Used to time and control different events|
+|CCP2|Enable CCP<br> CCP Mode: PWM<br> Select Timer: Timer 4<br> Duty Cycle: 50% |Used to time and control different events|																																																									
+|PWM| PWM Enable: Enabled <br> Select a Timer: TMR4<br> PWM Polarity: active_lo <br>| Used to generate Pulse-Width Modulation (PWM) signals|
+|SPI| Clock Source: Fosc/4_SSPxADD<br>Requested Speed (kHz): 100<br> Mode: Mode 0<br> Data Input Sample At: Middle<br>| Used to transmit/receive data and communicate|
+|TMR1| Clock Source: Fosc/4 <br> Clock Prescaler: 1:2 <br> Timer Count Editor Enable: Enabled <br> Requested Period: 2ms <br> | Used for configuring time-out|
+|TMR2|Timer Enable: Enabled <br> Control Mode: Roll over pulse <br> Clock Source: LFINTOSC <br> Clock Frequency: 31kHz <br> Clock Prescaler: 1:1 <br> Requested Period: 2ms <br> TMR Interrupt Enable: Enabled<br> | Used for configuring time-out|
+|TMR4|Timer Enable: Enabled <br> Control Mode: Roll over pulse <br> Clock Source: Fosc/4 <br> Clock Frequency: 8MHz <br> Clock Prescaler: 1:64 <br> Requested Period: 2ms <br> | Used for configuring time-out|
 
 ## Demo operation
 
 ## IR Transmitter
 
 * Switch S1 is used to send IR commands to the IR receiver.
-* Pressing switch S1 will send the IR command equal to the switch press count plus 0x80 i.e. from 0x81 to 0x88. After 8th count the command 0x81 to 0x88 are repeated. 
+* Pressing switch S1 will send an IR command equal to the switch press count plus 0x80 (i.e., from 0x81 to 0x88). After the eighth press, the commands from 0x81 to 0x88 are repeated.
 
 ## IR Receiver
 
-* After reset the IR receiver will wait for command to be received and "Waiting for CMD" message will be displayed on the LCD.
-
-* If any command is received from the IR Transmitter board then corresponding control action is taken and the received command along with control action is displyed on the LCD screen.
-
-* If there is any error during reception such as error in start of the frame, error in data bit length, receiver address mismatch, error in command byte etc. then corrosponding error message will be displayed on the LCD and the receiver will get ready for next IR frame reception.
-
-* Press switch S1 to send command #81 to the receiver as shown in figure 10.
+* After reset, the IR receiver will wait for a command to be received, and the message "Waiting for CMD" will be displayed on the LCD.
+* If any command is received from the IR transmitter board, the corresponding control action is taken, and the received command along with the control action is displayed on the LCD screen.
+* If there is any error during reception—such as an error in the start of the frame, an error in data bit length, a receiver address mismatch, or an error in the command byte—a corresponding error message will be displayed on the LCD, and the receiver will be ready for the next IR frame reception.
+* Press switch S1 to send command #81 to the receiver, as shown in Figure 3.
 
 <p align="center">
   <img width=700 height=auto src="images/image2.png">
-  <br>Figure 10: Press switch S1 to send command #81 <br>
+  <br>Figure 3: Press switch S1 to send command #81 <br>
 </p> 
 
 * Receiver after receiving command #81:
 
 <p align="center">
   <img width=700 height=auto src="images/image1.png">
-  <br>Figure 11: Receiver after receiving command #81 <br>
+  <br>Figure 4: Receiver after receiving command #81 <br>
 </p> 
 
 
@@ -182,5 +151,6 @@ Set the SPI speed under MSSP foundation service library configurations section. 
 
 ## Conclusion
 
-This demo example demonstrated the usage of important features of PIC18-Q10 MCUs for simple Real Time Control applications. This demo example illustrates an overview of IR communication with NEC infrared transmission protocol. The IR Transmitter is implemented using core independent peripherals (CIPs) of PIC18-Q10 microcontroller such as CLCs, PWM and DSM peripherals without much CPU intervention. The IR receiver is implemented using Timer 2, CCP and Timer1 peripherals of PIC18-Q10 microcontroller. The combination of PWM, CCP, CLCs and DSM etc. core independent peripherals along with other generic peripherals such as Timers and HLTs available in PIC18-Q10 MCUs offers the lower system cost, low power and reliable deterministic and safe application development. These microcontrollers can be used for a wide range of general purpose, low-power and reliable, deterministic real time control applications such as remote control of various home appliances and remote-controlled toys for kids etc.
+This demo example demonstrates the use of important features of PIC18-Q10 MCUs for simple real-time control applications. It provides an overview of IR communication using the NEC infrared transmission protocol. The IR transmitter is implemented using core independent peripherals (CIPs) of the PIC18-Q10 microcontroller, such as CLCs, PWM, and DSM peripherals, with minimal CPU intervention. The IR receiver is implemented using Timer 2, CCP, and Timer 1 peripherals of the PIC18-Q10 microcontroller.
+The combination of PWM, CCP, CLCs, DSM, and other core independent peripherals, along with generic peripherals such as timers and HLTs available in PIC18-Q10 MCUs, offers lower system cost, low power consumption, and reliable, deterministic, and safe application development. These microcontrollers can be used for a wide range of general-purpose, low-power, and reliable real-time control applications, such as remote control of various home appliances and remote-controlled toys for children.
 

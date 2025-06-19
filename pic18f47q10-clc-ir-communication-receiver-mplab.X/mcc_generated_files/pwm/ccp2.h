@@ -1,17 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * PWM2 Generated Driver API Header File.
  * 
- * @file main.c
+ * @file ccp2.h
  * 
- * @defgroup main MAIN
+ * @defgroup pwm2 PWM2
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes for the PWM2 module.
  *
- * @version MAIN Driver Version 1.0.2
- *
- * @version Package Version: 3.1.2
+ * @version PWM2 Driver Version 2.0.3
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,30 +29,44 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
+
+#ifndef PWM2_H
+#define PWM2_H
+
+ /**
+   Section: Included Files
+ */
+
+#include <xc.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+
+ /**
+ * @ingroup pwm2
+ * @brief Initializes the CCP2 module. This is called only once before calling other CCP2 APIs.
+ * @param None.
+ * @return None.
+ */
+void CCP2_Initialize(void);
+/**
+ * @ingroup pwm2
+ * @brief Loads the 16-bit duty cycle value.
+ * @pre CCP2_Initialize() is already called.
+ * @param dutyValue - 16-bit duty cycle value.
+ * @return None.
+ */
+void CCP2_LoadDutyValue(uint16_t dutyValue);
+/**
+ * @ingroup pwm2
+ * @brief Returns the PWM output status.
+ * @pre CCP2_Initialize() is already called.
+ * @param None.
+ * @retval True - CCP2 PWM output is high
+ * @retval False - CCP2 PWM output is low
+ */
+bool CCP2_OutputStatusGet(void);
+#endif //PWM2_H
+/**
+ End of File
 */
-
-int main(void)
-{
-    SYSTEM_Initialize(); 
-
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
-}

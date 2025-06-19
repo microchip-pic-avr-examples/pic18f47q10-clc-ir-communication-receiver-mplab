@@ -1,17 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * System Driver Source File
  * 
- * @file main.c
+ * @file system.c
  * 
- * @defgroup main MAIN
+ * @ingroup systemdriver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API implementation for the System driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.3
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 2.1.5
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,30 +31,23 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
-#include "macros.h"
-/*
-    Main application
-*/
 
-int main(void)
+#include "../system.h"
+
+
+void SYSTEM_Initialize(void)
 {
-    SYSTEM_Initialize(); 
-
-    INTERRUPT_GlobalInterruptEnable();
-    
-    INTERRUPT_PeripheralInterruptEnable(); 
-    
-    Init_display();                                                 // Write initial text on LCD display
-        
-    DisableCCP_Interrupt();                                         // Disable capture interrupt it will be enabled once IOC (falling edge) is detected on RA1
-    
-    TMR2_PeriodMatchCallbackRegister(TMR2_UserInterruptHandler);
-    CCP1_SetCallBack(CCP1_UserInterruptHandler);
-
-    while(1)
-    {
-        ApplicationTask();
-    }    
+    CLOCK_Initialize();
+    PIN_MANAGER_Initialize();
+    CCP1_Initialize();
+    CCP2_Initialize();
+    TMR1_Initialize();
+    TMR2_Initialize();
+    TMR4_Initialize();
+    CLC1_Initialize();
+    CLC3_Initialize();
+    PWM3_Initialize();
+    SPI1_Initialize();
+    INTERRUPT_Initialize();
 }
+

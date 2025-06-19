@@ -4,12 +4,8 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>pic18f47q10-clc-ir-communication-receiver-mplab</name>
-            <creation-uuid>00803c76-5021-4c2b-b91b-c0c196622f51</creation-uuid>
+            <creation-uuid>bf8913d1-6516-41a9-994e-cfcc07f46a44</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
-            <cpp-extensions/>
-            <header-extensions>h</header-extensions>
-            <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
