@@ -18,7 +18,7 @@ Many real-time control applications use infrared (commonly referred to as IR) wi
 
 - [PIC18F47Q10 Product Page](https://www.microchip.com/wwwproducts/en/PIC18F47Q10 "PIC18F47Q10 Product Page")
 - [PIC18F47Q10 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=PIC18F47Q10&type=&language= "PIC18F47Q10 Code Examples on GitHub")
-- [IR Communication Using Core Independent peripherals: IR Transmitter—Discover link](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.modules-and-peripherals.display.lcd/com.microchip.mcu8.mplabx.project.pic18f47q10-clc-ir-communication-receiver-mplab/1.0.3?view=about&dsl=IR+AND+Receiver)
+- [IR Communication Using Core Independent peripherals: IR Transmitter— MPLAB® Discover link](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.modules-and-peripherals.display.lcd/com.microchip.mcu8.mplabx.project.pic18f47q10-clc-ir-communication-receiver-mplab/1.0.3?view=about&dsl=IR+AND+Receiver)
 - [AN2933 — DC Motor Control With Touch Interface and IR Communication](http://ww1.microchip.com/downloads/en/AppNotes/AN2933-DC-Motor-Control-with-Touch-Interface-and-IR00002933A.pdf "DC Motor control with Touch Interface and IR communication-Application note")
 
 ## Software  Tools
@@ -45,7 +45,7 @@ Many real-time control applications use infrared (commonly referred to as IR) wi
 
 ## Setup
 
-##  IR Receiver
+## IR Receiver
 
 The IR receiver unit is implemented using existing evaluation boards: the Curiosity Nano Base for click boards and the IR Click board. The TSOP38338 IR receiver module on the IR Click board is used to detect received IR commands. Figure 1 shows how to implement the IR receiver.
 
@@ -91,7 +91,7 @@ If all the bits and edges are received correctly, Timer 1 is stopped, the CCP is
 
 <p align="center">
   <img width=700 height=auto src="images/image3.png">
-  <br>**Figure 2.** Demo Setup IR Receiver <br>
+  <br><b>Figure 2.</b> Demo Setup IR Receiver <br>
 </p> 
 
 ## Microcontroller Peripheral Configuration
@@ -125,14 +125,14 @@ If all the bits and edges are received correctly, Timer 1 is stopped, the CCP is
 
 <p align="center">
   <img width=700 height=auto src="images/image2.png">
-  <br>**Figure 3.** Press switch S1 to send command #81 <br>
+  <br><b>Figure 3.</b> Press Switch S1 to Send Command #81 <br>
 </p> 
 
 * Receiver after receiving command #81:
 
 <p align="center">
   <img width=700 height=auto src="images/image1.png">
-  <br>**Figure 4.** Receiver After Receiving Command #81 <br>
+  <br><b>Figure 4.</b> Receiver After Receiving Command #81 <br>
 </p> 
 
 
